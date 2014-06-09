@@ -8,7 +8,7 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class Client extends \Goutte\Client
 {
-    protected $baseUrl = 'http://thepiratebay.se';
+    protected $baseUrl = 'https://thepiratebay.se';
 
     protected $categories = array(
         'audio',
@@ -46,7 +46,7 @@ class Client extends \Goutte\Client
         });
         $params = array('q' => $term, 'page' => $page - 1);
         foreach ($categories as $param) {
-            $params[$param] = 1;
+            $params[$param] = 'on';
         }
 
         // Get the search form
